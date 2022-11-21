@@ -15,38 +15,58 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if(currentNode.down != null)
-            {
-                transform.position = currentNode.down.gameObject.transform.position;
-                currentNode = currentNode.down.GetComponent<Node>();
-            }
+            KeypadDown();
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (currentNode.up != null)
-            {
-                transform.position = currentNode.up.gameObject.transform.position;
-                currentNode = currentNode.up.GetComponent<Node>();
-            }
+            KeypadUp();
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (currentNode.left != null)
-            {
-                transform.position = currentNode.left.gameObject.transform.position;
-                currentNode = currentNode.left.GetComponent<Node>();
-            }
+            KeypadLeft();
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (currentNode.right != null)
-            {
-                transform.position = currentNode.right.gameObject.transform.position;
-                currentNode = currentNode.right.GetComponent<Node>();
-            }
+            KeypadRight();
+        }
+    }
+
+    public void KeypadRight()
+    {
+        if (currentNode.right != null)
+        {
+            transform.position = currentNode.right.gameObject.transform.position;
+            currentNode = currentNode.right.GetComponent<Node>();
+        }
+    }
+
+    public void KeypadLeft()
+    {
+        if (currentNode.left != null)
+        {
+            transform.position = currentNode.left.gameObject.transform.position;
+            currentNode = currentNode.left.GetComponent<Node>();
+        }
+    }
+
+    public void KeypadUp()
+    {
+        if (currentNode.up != null)
+        {
+            transform.position = currentNode.up.gameObject.transform.position;
+            currentNode = currentNode.up.GetComponent<Node>();
+        }
+    }
+
+    public void KeypadDown()
+    {
+        if (currentNode.down != null)
+        {
+            transform.position = currentNode.down.gameObject.transform.position;
+            currentNode = currentNode.down.GetComponent<Node>();
         }
     }
 }

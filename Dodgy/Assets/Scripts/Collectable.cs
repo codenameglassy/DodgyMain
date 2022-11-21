@@ -12,6 +12,7 @@ public class Collectable : MonoBehaviour
         {
             FindObjectOfType<RamailoGamesScoreManager>().AddScore(1f);
             Instantiate(vfxPrefab, transform.position, Quaternion.identity);
+            AudioManagerCS.instance.Play("collectable");
             Destroy(gameObject);
         }
     }
