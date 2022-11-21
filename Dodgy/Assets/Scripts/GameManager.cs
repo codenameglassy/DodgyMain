@@ -21,10 +21,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform spawnPosDownMid;
     [SerializeField] Transform spawnPosDownRight;
 
-
+    [SerializeField] Transform[] collectableSpawnPoints;
 
     [SerializeField] int maxPos;
     [SerializeField] float startDelay, RepeatDelay;
+
+    [SerializeField] GameObject gemCollectable;
+
     private void Awake()
     {
         instance = this;
@@ -33,6 +36,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("Spawn", startDelay, RepeatDelay);
+        InvokeRepeating("SpawnCollectable", 2, 5);
+
     }
 
     void Spawn()
@@ -97,6 +102,16 @@ public class GameManager : MonoBehaviour
     void Spawn_FromDownRight()
     {
         Instantiate(fireballPrefabDown, spawnPosDownRight.position, Quaternion.identity);
+    }
+
+    void SpawnCollectable()
+    {
+        if(FindObjectOfType<Collectable>() != null)
+        {
+            return;
+        }
+        int index = Random.Range(0, collectableSpawnPoints.Length);
+        Instantiate(gemCollectable, collectableSpawnPoints[index].position, Quaternion.identity);
     }
 
 }

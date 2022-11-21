@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  explosionVfx: {fileID: 3431415561902060519, guid: 86b9dc457ed8b1e4abdb1a996b1f63ed, type: 3}
   state: 1
 --- !u!1 &4531088946271190664
 GameObject:
@@ -168,7 +169,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1896611309
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1522818639, guid: 94a116f96f230b749855f9cfb6e8d0ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

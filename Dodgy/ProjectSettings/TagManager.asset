@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collectable
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 2398355987
+    locked: 0
+  - name: VFX
+    uniqueID: 1732551515
     locked: 0

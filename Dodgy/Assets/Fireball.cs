@@ -7,7 +7,7 @@ public class Fireball : MonoBehaviour
     Rigidbody2D rb;
 
     [SerializeField] float speed;
-
+    [SerializeField] GameObject explosionVfx;
     public enum States 
     { 
         Up, Down
@@ -49,6 +49,7 @@ public class Fireball : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Instantiate(explosionVfx, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
