@@ -7,6 +7,7 @@ public class reset : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        Application.runInBackground = true;
         FindObjectOfType<audiosettings>().Reset_();
     }    
        
